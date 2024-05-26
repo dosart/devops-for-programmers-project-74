@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /root
+    ports:
+      - 8080:8080
+    volumes:
+      - ./app/:/root
+    command: ["bash", "-c", "make setup && make dev"]
