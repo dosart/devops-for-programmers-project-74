@@ -1,5 +1,3 @@
-setup:
-	docker-compose run --rm app make setup
 
 build:
 	docker-compose -f docker-compose.yml build app
@@ -8,13 +6,12 @@ push:
 	docker-compose -f docker-compose.yml push app
 
 test:
-	docker-compose -f docker-compose.yml up --abort-on-container-exit
+	cp app/.env.example app/.env
+	docker-compose --env-file app/.env -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
-dev:
-	docker run -p 8080:8080 dosart/devops-for-programmers-project-74_app make dev
+run:
+	cp app/.env.example app/.env
+	docker-compose --env-file app/.env up
 
-up:
-	docker-compose up
-
-down:
+stop:
 	docker-compose down
