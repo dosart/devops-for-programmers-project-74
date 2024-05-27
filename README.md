@@ -13,7 +13,7 @@ Clone the repository and run::
 make run
 ```
 
-### Управление проектом с помощью Makefile
+### Project management using Makefile
 - ```make run``` — run all containers specified in docker-compose.yml.
 - ```make stop``` — stop all containers specified in docker-compose.yml.
 - ```make test``` —  run all tests, stops containers after execution, and returns a completion code.
