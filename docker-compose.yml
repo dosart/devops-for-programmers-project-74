@@ -32,7 +32,7 @@ services:
       DATABASE_PORT: ${DATABASE_PORT}
     depends_on:
       - db
-    command: ["bash", "-c", "make test"]
+    command: ["bash", "-c", "sleep 5 && make test"]
 
 volumes:
   database_data:
