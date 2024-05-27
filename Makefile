@@ -12,3 +12,9 @@ test:
 
 dev:
 	docker run -p 8080:8080 dosart/devops-for-programmers-project-74_app make dev
+
+up:
+	docker-compose up
+
+down:
+	docker-compose down
